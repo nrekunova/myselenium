@@ -9,7 +9,7 @@
 
     <test name="Regression1">
         <classes>
-            <class name="com.hillel.ui.SimpleUiTest"/>
+            <class name="com.automation.petclinic.tests.SimpleUiTest"/>
         </classes>
     </test>
 </suite>

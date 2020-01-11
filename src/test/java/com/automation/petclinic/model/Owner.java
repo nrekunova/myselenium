@@ -1,4 +1,4 @@
-package com.hillel.ui;
+package com.automation.petclinic.model;
 
 import java.util.Objects;
 

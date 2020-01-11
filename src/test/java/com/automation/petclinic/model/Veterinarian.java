@@ -1,4 +1,4 @@
-package com.hillel.ui;
+package com.automation.petclinic.model;
 
 public class Veterinarian {
         private String firstName;

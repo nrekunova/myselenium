@@ -1,4 +1,4 @@
-package com.hillel.ui;
+package com.automation.petclinic.tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
