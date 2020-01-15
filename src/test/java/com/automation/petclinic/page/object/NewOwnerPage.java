@@ -1,7 +1,7 @@
 package com.automation.petclinic.page.object;
 
 import com.automation.petclinic.conf.Configuration;
-import com.automation.petclinic.model.Owner;
+import com.automation.petclinic.model.OwnerUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -141,7 +141,7 @@ public class NewOwnerPage extends BasePage {
 
 
 
-    public void clickAddOwnerAndWaitForOwnersPage(Owner owner){
+    public void clickAddOwnerAndWaitForOwnersPage(OwnerUI owner){
         WebElement button = driver.findElement(By.xpath("//*[contains(text(), 'Add Owner')]"));
         button.click();
         WebDriverWait wdw = new WebDriverWait(driver, 5);
@@ -153,8 +153,8 @@ public class NewOwnerPage extends BasePage {
     }
 
 
-    private Owner createOwner(WebElement userRow) {
-        Owner owner = new Owner();
+    private OwnerUI createOwner(WebElement userRow) {
+        OwnerUI owner = new OwnerUI();
         String fullName = userRow.findElement(By.xpath("./td/a")).getText();
         String[] fullNameArray = fullName.split(" ");
         if (fullNameArray.length > 1) {
@@ -175,8 +175,8 @@ public class NewOwnerPage extends BasePage {
         return owner;
     }
 
-    public List<Owner> getOwnersList() {
-        List<Owner> owners = new ArrayList<>();
+    public List<OwnerUI> getOwnersList() {
+        List<OwnerUI> owners = new ArrayList<>();
         WebElement ownersTable = driver.findElement(By.xpath("//*[@class='table-responsive']"));
 
         List<WebElement> ownersList = ownersTable.findElements(By.xpath(".//tbody/tr"));

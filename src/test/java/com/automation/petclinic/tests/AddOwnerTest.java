@@ -1,7 +1,7 @@
 package com.automation.petclinic.tests;
 
 import com.automation.petclinic.conf.Configuration;
-import com.automation.petclinic.model.Owner;
+import com.automation.petclinic.model.OwnerUI;
 import com.automation.petclinic.page.object.NewOwnerPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -62,7 +62,7 @@ public class AddOwnerTest {
         NewOwnerPage page = new NewOwnerPage(driver);
         page.openPage();
 
-        Owner owner = new Owner();
+        OwnerUI owner = new OwnerUI();
         owner.setFirstName("testFirstName");
         owner.setLastName("testLastName");
         owner.setAddress("testAddress");

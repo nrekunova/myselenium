@@ -1,14 +1,30 @@
 package com.automation.petclinic.model;
 
-import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
+import java.util.List;
+
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Owner {
     private String firstName;
     private String lastName;
     private String address;
     private String city;
     private String telephone;
-    private String pets;
+    private int id;
+
+    @JsonIgnore
+    private List<Object> pets;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -50,31 +66,11 @@ public class Owner {
         this.telephone = telephone;
     }
 
-    public String getPets() {
+    public List<Object> getPets() {
         return pets;
     }
 
-    public void setPets(String pets) {
+    public void setPets(List<Object> pets) {
         this.pets = pets;
     }
-
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Owner owner = (Owner) o;
-        return Objects.equals(firstName, owner.firstName) &&
-                Objects.equals(lastName, owner.lastName) &&
-                Objects.equals(address, owner.address) &&
-                Objects.equals(city, owner.city) &&
-                Objects.equals(telephone, owner.telephone) &&
-                Objects.equals(pets, owner.pets);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(firstName, lastName, address, city, telephone, pets);
-    }
 }
-

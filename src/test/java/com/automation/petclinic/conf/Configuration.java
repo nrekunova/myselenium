@@ -12,6 +12,8 @@ public class Configuration {
     private static Configuration instance;
 
     private final String mainUrl;
+    private final String apiUrl;
+    private final int apiPort;
     private String browser = System.getProperty("browser", "chrome");
 
     private Configuration() {
@@ -21,6 +23,9 @@ public class Configuration {
         String app = System.getProperty("app", "petclinic");
         mainUrl = schema.concat("://").concat(host).concat(":").concat(port).concat("/").concat(app);
 
+        String apihost = System.getProperty("apihost", "localhost");
+        apiPort = Integer.valueOf(System.getProperty("apiport", "9966"));
+        apiUrl = schema.concat("://").concat(apihost);
     }
 
     public static Configuration getInstance() {
@@ -33,7 +38,13 @@ public class Configuration {
     public String getMainUrl(){
         return mainUrl;
     }
+    public String getApiUrl(){
+        return apiUrl;
+    }
 
+    public int getApiPort() {
+        return apiPort;
+    }
 //    private static final String MAIN_URL = "http://139.59.149.247:8000/petclinic/";
 
     public WebDriver getDriver() {
