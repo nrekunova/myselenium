@@ -1,6 +1,7 @@
 package com.automation.petclinic.page.object;
 
 import com.automation.petclinic.conf.Configuration;
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -21,6 +22,7 @@ public class BasePage {
         return new WebDriverWait(driver, 4);
     }
 
+    @Step("Set invalid value and check error message")
     protected void setInvalidValueAndCheckError(WebElement field, String errorText, CharSequence ... c) {
         field.sendKeys(c);
         WebElement error = getParent(field).findElement(By.className("help-block"));

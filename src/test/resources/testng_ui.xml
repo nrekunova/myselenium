@@ -1,0 +1,10 @@
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite ui" verbose="1" >
+    <test name="ui">
+        <packages>
+            <package name="com.automation.petclinic.tests"/>
+        </packages>
+    </test>
+</suite>

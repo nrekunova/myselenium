@@ -3,6 +3,8 @@ package com.automation.petclinic.tests;
 import com.automation.petclinic.conf.Configuration;
 import com.automation.petclinic.page.object.PetTypesPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -16,7 +18,8 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
+@Epic("Petclinic")
+@Feature("Pet Types")
 public class PetTypesAddTest {
 
 
@@ -36,7 +39,7 @@ public class PetTypesAddTest {
         driver.quit();
     }
 
-    @Test
+    @Test(description = "Add pet types test")
     private void addPetTypeTest() {
 //        driver.get(mainUrl + "/pettypes");
 //        Assert.assertEquals(driver.getTitle(), "SpringPetclinicAngular");

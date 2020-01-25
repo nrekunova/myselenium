@@ -3,6 +3,8 @@ package com.automation.petclinic.restAssured;
 import com.automation.petclinic.conf.Configuration;
 import com.automation.petclinic.model.Owner;
 import com.automation.petclinic.model.Pet;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.parsing.Parser;
@@ -13,7 +15,8 @@ import org.testng.annotations.Test;
 
 import static org.hamcrest.Matchers.equalTo;
 
-
+@Epic("Petclinic")
+@Feature("Owner")
 public class OwnerTest2 {
 
     private Owner owner;

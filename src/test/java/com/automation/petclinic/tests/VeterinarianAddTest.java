@@ -5,6 +5,8 @@ import com.automation.petclinic.model.Veterinarian;
 import com.automation.petclinic.page.object.VeterinarianAddPage;
 import com.automation.petclinic.page.object.VeterinariansPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -20,7 +22,8 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-
+@Epic("Petclinic")
+@Feature("Veterinarian")
 public class VeterinarianAddTest {
 
 //    private static final String mainUrl = Configuration.getInstance().getMainUrl();
@@ -51,7 +54,7 @@ public class VeterinarianAddTest {
 //        });
 //    }
 
-    @Test
+    @Test(description = "Add new veterinarian test")
     private void addVeterinarianTest() {
         Veterinarian veterinarian = new Veterinarian();
         veterinarian.setFirstName("testFirstName");

@@ -1,5 +1,6 @@
 package com.automation.petclinic.page.object;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -26,18 +27,18 @@ public class VeterinarianAddPage extends BasePage {
     private WebElement getFirstNameField(){
         return driver.findElement(By.id("firstName"));
     }
-
+    @Step("Set one letter to first name field")
     public void setOneLetterToFirstNameAndCheckError (){
         WebElement field = getFirstNameField();
         field.clear();
         setInvalidValueAndCheckError(field, "First name must be at least 2 characters long", "t");
     }
-
+    @Step("Clear first name field")
     public void clearFirstNameAndCheckRequired() {
         WebElement field = getFirstNameField();
         setInvalidValueAndCheckError(field, "First name is required", Keys.BACK_SPACE );
     }
-
+    @Step("Fill first name")
     public void fillFirstName(String name) {
         WebElement field = getFirstNameField();
         field.clear();
@@ -47,18 +48,18 @@ public class VeterinarianAddPage extends BasePage {
     private WebElement getLastNameField(){
         return driver.findElement(By.id("lastName"));
     }
-
+    @Step("Set one letter to last name field")
     public void setOneLetterToLastNameAndCheckError (){
         WebElement field = getLastNameField();
         field.clear();
         setInvalidValueAndCheckError(field, "Last name must be at least 2 characters long", "t");
     }
-
+    @Step("Clear last name from the field and check")
     public void clearLastNameAndCheckRequired() {
         WebElement field = getLastNameField();
         setInvalidValueAndCheckError(field, "Last name is required", Keys.BACK_SPACE );
     }
-
+    @Step("Fill last name")
     public void fillLastName(String name) {
         WebElement field = getLastNameField();
         field.clear();

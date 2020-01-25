@@ -1,6 +1,8 @@
 package com.automation.petclinic.restAssured;
 
 import com.automation.petclinic.conf.Configuration;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.parsing.Parser;
@@ -8,6 +10,9 @@ import io.restassured.specification.RequestSpecification;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import static org.hamcrest.Matchers.*;
+
+@Epic("Petclinic")
+@Feature("Pet Types")
 
 public class PetTypeTest {
 

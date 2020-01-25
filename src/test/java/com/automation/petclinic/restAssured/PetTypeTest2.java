@@ -3,6 +3,8 @@ package com.automation.petclinic.restAssured;
 import com.automation.petclinic.conf.Configuration;
 import com.automation.petclinic.model.Pet;
 import com.automation.petclinic.model.PetType;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.parsing.Parser;
@@ -13,6 +15,8 @@ import org.testng.annotations.Test;
 
 import static org.hamcrest.Matchers.equalTo;
 
+@Epic("Petclinic")
+@Feature("Pet Types")
 
 public class PetTypeTest2 {
 
@@ -36,7 +40,7 @@ public class PetTypeTest2 {
         deletePetTypeByIdTest(petType.getId());
     }
 
-    @Test
+    @Test(description = "Get pet type by Id test")
     public void getPetTypeByIdTest() {
         RestAssured.given()
                 .get("/pettypes/{id}", petType.getId())

@@ -1,13 +1,17 @@
 package com.automation.petclinic.restAssured;
 
 import com.automation.petclinic.conf.Configuration;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import io.restassured.RestAssured;
 import io.restassured.parsing.Parser;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasItems;
+
+@Epic("Petclinic")
+@Feature("Specialty")
 
 public class SpecialtyTest {
 

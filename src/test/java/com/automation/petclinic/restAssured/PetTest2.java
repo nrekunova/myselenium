@@ -4,6 +4,8 @@ import com.automation.petclinic.conf.Configuration;
 import com.automation.petclinic.model.Owner;
 import com.automation.petclinic.model.Pet;
 import com.automation.petclinic.model.PetType;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.parsing.Parser;
@@ -14,7 +16,8 @@ import org.testng.annotations.Test;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasItem;
-
+@Epic("Petclinic")
+@Feature("Pet")
 
 public class PetTest2 {
 

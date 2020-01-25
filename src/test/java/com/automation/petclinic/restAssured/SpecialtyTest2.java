@@ -3,6 +3,9 @@ package com.automation.petclinic.restAssured;
 import com.automation.petclinic.conf.Configuration;
 import com.automation.petclinic.model.Pet;
 import com.automation.petclinic.model.Specialty;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Step;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.parsing.Parser;
@@ -13,6 +16,8 @@ import org.testng.annotations.Test;
 
 import static org.hamcrest.Matchers.equalTo;
 
+@Epic("Petclinic")
+@Feature("Specialty")
 
 public class SpecialtyTest2 {
 
@@ -47,7 +52,7 @@ public class SpecialtyTest2 {
                 .log().all();
     }
 
-
+    @Step
     private Specialty postSpecialtyTestWithObject() {
         Specialty specialty = new Specialty();
         specialty.setName("dantist");
@@ -61,6 +66,7 @@ public class SpecialtyTest2 {
                 .as(Specialty.class);
     }
 
+    @Step
     public void deleteSpecialtyByIdTest(int id) {
         RestAssured.given()
                 .log().all()
@@ -69,7 +75,7 @@ public class SpecialtyTest2 {
                 .statusCode(204);
     }
 
-
+    @Step
     private void putSpecialtyTestWithObject() {
         specialty.setName("ophthalmologist");
         RestAssured.given()

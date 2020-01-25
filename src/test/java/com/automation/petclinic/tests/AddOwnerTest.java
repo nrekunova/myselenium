@@ -4,6 +4,8 @@ import com.automation.petclinic.conf.Configuration;
 import com.automation.petclinic.model.OwnerUI;
 import com.automation.petclinic.page.object.NewOwnerPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
@@ -11,6 +13,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+@Epic("Petclinic")
+@Feature("Pets Owners")
 
 public class AddOwnerTest {
     private WebDriver driver;
@@ -27,7 +31,7 @@ public class AddOwnerTest {
         driver.quit();
     }
 
-    @Test
+    @Test(description = "Add owner, save and validation test")
     public void saveButtonAndValidationTest() {
         NewOwnerPage page = new NewOwnerPage(driver);
         page.openPage();
@@ -57,7 +61,7 @@ public class AddOwnerTest {
         page.addOwnerButtonIsEnabled();
     }
 
-    @Test
+    @Test(description = "Fill owner's data test")
     public void addOwner() {
         NewOwnerPage page = new NewOwnerPage(driver);
         page.openPage();
